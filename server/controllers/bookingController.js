@@ -81,7 +81,7 @@ const getUserBookings = async (req, res) => {
     let bookings = await Booking.find({ user: req.user._id })
       .populate({ path: 'slot', populate: { path: 'temple', select: 'name' } })
       .sort({ bookingDate: -1 });
-      
+
     // Apply lazy updates for completed status (M3)
     bookings = await processLazyUpdates(bookings);
 
@@ -97,7 +97,7 @@ const getUserBookings = async (req, res) => {
 const cancelBooking = async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id).populate({ path: 'slot', populate: { path: 'temple', select: 'name' } });
-    
+
     if (!booking) return res.status(404).json({ message: 'Booking not found' });
     if (booking.user.toString() !== req.user._id.toString()) return res.status(401).json({ message: 'Not authorized to cancel this booking' });
     if (booking.status !== 'confirmed') return res.status(400).json({ message: 'Only confirmed bookings can be cancelled' });

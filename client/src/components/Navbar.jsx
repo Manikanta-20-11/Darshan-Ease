@@ -28,7 +28,6 @@ const Navbar = () => {
               {user.role === 'admin' ? (
                 <>
                   <Link to="/admin" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-2 py-1 rounded-md font-medium transition-colors duration-300 text-sm">Admin Portal</Link>
-                  <Link to="/temples" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-2 py-1 rounded-md font-medium transition-colors duration-300 text-sm">Temples</Link>
                   <Link to="/admin/verify" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-2 py-1 rounded-md font-medium transition-colors duration-300 text-sm">Verify Gate</Link>
                 </>
               ) : (

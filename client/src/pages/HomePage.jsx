@@ -45,13 +45,22 @@ const HomePage = () => {
             Darshan Ease is a digital pilgrimage management platform. Book your sacred darshan slot in seconds and arrive at the temple with peace of mind.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {user?.role === 'admin' ? (
+              <Link
+                to="/admin"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+              >
+                Manage Admin Portal
+              </Link>
+            ) : (
               <Link
                 to={user ? "/book-slot" : "/register"}
                 className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
               >
                 Book Darshan Now
               </Link>
-              {!user && (
+            )}
+            {!user && (
                 <Link
                   to="/login"
                   className="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold py-4 px-10 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-lg"
@@ -119,10 +128,10 @@ const HomePage = () => {
               </Link>
             ) : (
               <Link
-                to="/dashboard"
+                to={user.role === 'admin' ? "/admin" : "/dashboard"}
                 className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-12 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
               >
-                Go to Dashboard
+                {user.role === 'admin' ? "Go to Admin Portal" : "Go to Dashboard"}
               </Link>
             )}
           </div>
@@ -143,10 +152,20 @@ const HomePage = () => {
           <div>
             <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to={user ? "/book-slot" : "/login"} state={!user ? { from: "/book-slot" } : null} className="hover:text-white transition">Book a Darshan</Link></li>
-              <li><Link to={user ? "/donate" : "/login"} state={!user ? { from: "/donate" } : null} className="hover:text-white transition">Make a Donation</Link></li>
-              <li><Link to={user ? "/feedback" : "/login"} state={!user ? { from: "/feedback" } : null} className="hover:text-white transition">Share Feedback</Link></li>
-              <li><Link to={user ? "/dashboard" : "/login"} className="hover:text-white transition">{user ? "My Dashboard" : "Devotee Login"}</Link></li>
+              {user?.role === 'admin' ? (
+                <>
+                  <li><Link to="/admin" className="hover:text-white transition">Admin Portal</Link></li>
+                  <li><Link to="/admin/verify" className="hover:text-white transition">Verify Tokens</Link></li>
+                  <li><Link to="/profile" className="hover:text-white transition">Admin Profile</Link></li>
+                </>
+              ) : (
+                <>
+                  <li><Link to={user ? "/book-slot" : "/login"} state={!user ? { from: "/book-slot" } : null} className="hover:text-white transition">Book a Darshan</Link></li>
+                  <li><Link to={user ? "/donate" : "/login"} state={!user ? { from: "/donate" } : null} className="hover:text-white transition">Make a Donation</Link></li>
+                  <li><Link to={user ? "/feedback" : "/login"} state={!user ? { from: "/feedback" } : null} className="hover:text-white transition">Share Feedback</Link></li>
+                  <li><Link to={user ? "/dashboard" : "/login"} className="hover:text-white transition">{user ? "My Dashboard" : "Devotee Login"}</Link></li>
+                </>
+              )}
             </ul>
           </div>
           <div>

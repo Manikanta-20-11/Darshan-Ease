@@ -1,5 +1,7 @@
 const Slot = require('../models/Slot');
-
+// @desc  Create a new slot
+// @route POST /api/slots
+// @access Admin
 const createSlot = async (req, res) => {
   try {
     const { date, startTime, endTime, maxVisitors, temple } = req.body;
@@ -19,6 +21,9 @@ const createSlot = async (req, res) => {
   }
 };
 
+// @desc  Get all slots for a date
+// @route GET /api/slots
+// @access Public
 const getSlots = async (req, res) => {
   try {
     const { date, temple } = req.query;

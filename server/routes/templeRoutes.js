@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const { getTemples, getAllTemples, createTemple, updateTemple } = require('../controllers/templeController');
