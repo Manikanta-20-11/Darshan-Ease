@@ -44,7 +44,7 @@ darshan-ease/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/darshan-ease.git
+git clone https://github.com/Manikanta-20-11/Darshan-Ease.git
 cd darshan-ease
 ```
 
@@ -125,3 +125,17 @@ npm run dev    # Starts on http://localhost:5173
 - ✅ Expired/cancelled slots shown with visual grey state
 - ✅ Admin Portal with live stats, slot management, booking history, and devotee list
 - ✅ Responsive Divine Modern (orange/cream) theme
+
+---
+
+## 👤 Author
+
+**Manikanta Buddavarapu**
+- **GitHub**: [@Manikanta-20-11](https://github.com/Manikanta-20-11)
+- **Email**: manikantabuddavarapu.official@gmail.com
+
+---
+
+## 📄 License
+
+This project is licensed under the ISC License.
