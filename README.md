@@ -2,15 +2,19 @@
 
 A full-stack MERN pilgrimage management system that replaces physical temple queues with a digital slot-booking platform.
 
+## **🌐 Live Demo**
+
+🚀 https://darshan-ease-ten.vercel.app/
+
 ## 🚀 Tech Stack
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | React.js (Vite), Tailwind CSS v4 |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB Atlas (Mongoose) |
-| **Authentication** | JWT + bcrypt |
-| **Architecture** | MVC (Models, Controllers, Routes) |
+| Layer              | Technology                        |
+| ------------------ | --------------------------------- |
+| **Frontend**       | React.js (Vite), Tailwind CSS v4  |
+| **Backend**        | Node.js, Express.js               |
+| **Database**       | MongoDB Atlas (Mongoose)          |
+| **Authentication** | JWT + bcrypt                      |
+| **Architecture**   | MVC (Models, Controllers, Routes) |
 
 ---
 
@@ -39,32 +43,39 @@ darshan-ease/
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
+
 - Node.js v16+
 - MongoDB Atlas account (or local MongoDB)
 
-### 1. Clone the Repository
-```bash
+### 1\. Clone the Repository
+
+```
 git clone https://github.com/Manikanta-20-11/Darshan-Ease.git
 cd darshan-ease
 ```
 
-### 2. Configure Backend
-```bash
+### 2\. Configure Backend
+
+```
 cd server
 npm install
 ```
+
 Create a `.env` file in `/server`:
-```env
+
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
-```bash
+
+```
 npm run dev    # Starts on http://localhost:5000
 ```
 
-### 3. Configure Frontend
-```bash
+### 3\. Configure Frontend
+
+```
 cd ../client
 npm install
 npm run dev    # Starts on http://localhost:5173
@@ -75,30 +86,34 @@ npm run dev    # Starts on http://localhost:5173
 ## 🔗 API Reference
 
 ### Auth Routes (`/api/auth`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/register` | Public | Register a new user |
-| POST | `/login` | Public | Login and receive JWT |
+
+| Method | Endpoint    | Access | Description           |
+| ------ | ----------- | ------ | --------------------- |
+| POST   | `/register` | Public | Register a new user   |
+| POST   | `/login`    | Public | Login and receive JWT |
 
 ### Slot Routes (`/api/slots`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/` | Public | Get slots (filter by `?date=YYYY-MM-DD`) |
-| POST | `/` | Admin | Create a new darshan slot |
-| PUT | `/:id` | Admin | Update slot capacity or status |
+
+| Method | Endpoint | Access | Description                              |
+| ------ | -------- | ------ | ---------------------------------------- |
+| GET    | `/`      | Public | Get slots (filter by `?date=YYYY-MM-DD`) |
+| POST   | `/`      | Admin  | Create a new darshan slot                |
+| PUT    | `/:id`   | Admin  | Update slot capacity or status           |
 
 ### Booking Routes (`/api/bookings`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| POST | `/` | User | Book a darshan slot |
-| GET | `/mybookings` | User | Get logged-in user's bookings |
+
+| Method | Endpoint      | Access | Description                   |
+| ------ | ------------- | ------ | ----------------------------- |
+| POST   | `/`           | User   | Book a darshan slot           |
+| GET    | `/mybookings` | User   | Get logged-in user's bookings |
 
 ### Admin Routes (`/api/admin`)
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| GET | `/stats` | Admin | Platform-wide stats |
-| GET | `/bookings` | Admin | All system bookings |
-| GET | `/users` | Admin | All registered devotees |
+
+| Method | Endpoint    | Access | Description             |
+| ------ | ----------- | ------ | ----------------------- |
+| GET    | `/stats`    | Admin  | Platform-wide stats     |
+| GET    | `/bookings` | Admin  | All system bookings     |
+| GET    | `/users`    | Admin  | All registered devotees |
 
 ---
 
@@ -131,6 +146,7 @@ npm run dev    # Starts on http://localhost:5173
 ## 👤 Author
 
 **Manikanta Buddavarapu**
+
 - **GitHub**: [@Manikanta-20-11](https://github.com/Manikanta-20-11)
 - **Email**: manikanta.ag20@gmail.com
 
