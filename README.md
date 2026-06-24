@@ -148,7 +148,7 @@ npm run dev    # Starts on http://localhost:5173
 **Manikanta Buddavarapu**
 
 - **GitHub**: [@Manikanta-20-11](https://github.com/Manikanta-20-11)
-- **Email**: manikanta.ag20@gmail.com
+- **Email**: tarak.mani2006@gmail.com
 
 ---
 
